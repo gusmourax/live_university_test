@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <title>Index</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="main">
+            <div class="side-bar">
+                <div class="input-container">
+                    <button class="option" id="option-btn">Option</button>
+                </div>
+                <div class="input-container">
+                    <span>Quantity</span>
+                    <form method="GET" action="/" class="quantity-form">
+                        <input name="quantity" id="quantity-input" type="number" placeholder="Type here" min="0">
+                        <button type="submit">OK</button>
+                    </form>
+                </div>
+            </div>
+            <div class="content">
+                <%for(var i = ((page - 1) * 3) + 1; i < ((page * 3) + 1) && i <= quantity ; i++) {%>
+                    <div class="query">
+                        <div class="query-number">
+                            <%= i %>
+                        </div>
+                        <div class="query-content">
+                            <span>
+                                Item <span class="content-option" ></span><span><%= i%></span>
+                            </span>
+                        </div>
+                    </div>
+                    <%}%>
+                        <%if(pages > 1){%>
+                            <div class="paginate-arrows">
+                                <button onclick="prevPage('<%= page%>', '<%= quantity%>')"><span>&#60;</span></button>
+                                <button onclick="nextPage('<%= page%>', '<%= quantity%>')"><span>&#62;</span></button>
+                            </div>
+                            <%}%>
+            </div>
+        </div>
+        <div class="hidden-dropdown-container" id="hidden-dropdown">
+            <select name="item" id="item-select">
+                <option value="A">A</option>
+                <option value="B">B</option>
+            </select>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/js/index.js"></script>
+    <script>
+        function nextPage(page, quantity) {
+            var pages = Math.ceil(quantity / 3);
+            if (page < pages) {
+                page++;
+                window.location.href = `?quantity=${quantity}&page=${page}`;
+            }
+        }
+
+        function prevPage(page, quantity) {
+            var pages = Math.ceil(quantity / 3);
+            if (page > 1) {
+                page--;
+                window.location.href = `?quantity=${quantity}&page=${page}`;
+            }
+        }
+    </script>
+</body>
+
+</html>
