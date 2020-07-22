@@ -14,4 +14,4 @@ This application have a demo server running [here](https://liveuniversityfronten
 
 ## About
 
-Gustavo Moura | Instagram: [@_gxtav_](https://www.instagram.com/_gxtav_/) | E-mail: gustavomoura5555@outlook.com | Github: https://github.com/gusmourax
+Gustavo Moura | E-mail: gustavomoura5555@outlook.com | Github: https://github.com/gusmourax
