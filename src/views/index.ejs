@@ -36,13 +36,13 @@
                             </span>
                         </div>
                     </div>
-                    <%}%>
-                        <%if(pages > 1){%>
-                            <div class="paginate-arrows">
-                                <button onclick="prevPage('<%= page%>', '<%= quantity%>')"><span>&#60;</span></button>
-                                <button onclick="nextPage('<%= page%>', '<%= quantity%>')"><span>&#62;</span></button>
-                            </div>
-                            <%}%>
+                <%}%>
+                <%if(pages > 1){%>
+                    <div class="paginate-arrows">
+                        <button onclick="prevPage('<%= page%>', '<%= quantity%>')"><span>&#60;</span></button>
+                        <button onclick="nextPage('<%= page%>', '<%= quantity%>')"><span>&#62;</span></button>
+                    </div>
+                <%}%>
             </div>
         </div>
         <div class="hidden-dropdown-container" id="hidden-dropdown">
